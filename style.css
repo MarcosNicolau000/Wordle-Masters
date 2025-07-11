@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(143, 143, 143);
+}
+
+/*
+#
+# HEADER PAGE
+#
+*/
+
+header {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    margin: 30px auto ;
+    margin-bottom: 0;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 40%;
+
+    text-align: center;
+}
+
+.header-title {
+    margin: 2% 3% 0 3%;
+}
+
+.header-message {
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    header {
+        width: 90%;
+        padding: 4%;
+    }
+}
+
+/*
+#
+# WORDLE MAIN
+#
+*/
+
+
+main {
+    background-color: #575656;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px auto;
+    margin-top: 0;
+    padding-bottom: 40px;
+    border-radius: 0 0 20px 20px;
+    max-width: 30%;
+    max-height: 20%;
+
+    color: white;
+}
+
+
+.wordle-header-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.wordle-header-status-message {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.wordle-game {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+}
+
+.first-try, .second-try, .third-try, .fourth-try, .fifth-try, .sixth-try{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2% auto;
+}
+
+/* 
+#
+# INPUTS SYTLE
+#
+*/
+
+
+main .wordle-game input {
+    margin: 1%;
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+
+    text-align: center;
+    font-size: 3em;
+    font-weight: 800;
+
+    border: 3px rgb(121, 121, 121) solid ;
+    background-color: #818181;
+
+    color: white;
+}
+
+main .wordle-game input.input-letter-correct {
+    background-color: #008000;
+    border: 3px #004100 solid ;
+}
+main .wordle-game input.input-letter-exist {
+    background-color: #ffa600;
+    border: 3px #b97900 solid ;
+}
