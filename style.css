@@ -17,7 +17,7 @@ body {
 header {
     background-color: rgb(51, 51, 51);
     color: white;
-    margin: 30px auto ;
+    margin: 30px auto;
     margin-bottom: 0;
     padding: 1%;
     display: flex;
@@ -38,12 +38,6 @@ header {
     margin: 10px;
 }
 
-@media (max-width: 768px) {
-    header {
-        width: 90%;
-        padding: 4%;
-    }
-}
 
 /*
 #
@@ -74,6 +68,7 @@ main {
     justify-content: center;
     margin-top: 20px;
 }
+
 .wordle-header-status-message {
     display: flex;
     justify-content: center;
@@ -87,7 +82,12 @@ main {
     margin: auto;
 }
 
-.first-try, .second-try, .third-try, .fourth-try, .fifth-try, .sixth-try{
+.first-try,
+.second-try,
+.third-try,
+.fourth-try,
+.fifth-try,
+.sixth-try {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -103,15 +103,15 @@ main {
 
 main .wordle-game input {
     margin: 1%;
-    height: 80px;
-    width: 80px;
+    height: 5vw;
+    width: 5vw;
     border-radius: 5px;
 
     text-align: center;
     font-size: 3em;
     font-weight: 800;
 
-    border: 3px rgb(121, 121, 121) solid ;
+    border: 3px rgb(121, 121, 121) solid;
     background-color: #818181;
 
     color: white;
@@ -119,9 +119,65 @@ main .wordle-game input {
 
 main .wordle-game input.input-letter-correct {
     background-color: #008000;
-    border: 3px #004100 solid ;
+    border: 3px #004100 solid;
 }
+
 main .wordle-game input.input-letter-exist {
     background-color: #ffa600;
-    border: 3px #b97900 solid ;
+    border: 3px #b97900 solid;
+}
+
+
+@media (max-width: 1256px) and (min-width: 767px) {
+    header {
+        width: 60%;
+        padding: 4%;
+    }
+
+    main {
+        width: 50%;
+        max-width: 100%;
+        padding: 0%;
+        text-align: center;
+    }
+
+    main .wordle-game input {
+        margin: 1%;
+        height: 7vw;
+        width: 7vw;
+
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        width: 90%;
+        padding: 4%;
+    }
+
+    main {
+        width: 80%;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    main .wordle-game input {
+        margin: 1%;
+        height: 12vw;
+        width: 12vw;
+        font-size: 1.5em;
+
+    }
+
+    .wordle-header-title {
+        font-size: 1.2em;
+    }
+
+    .wordle-header-status-message {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
 }
