@@ -1,6 +1,6 @@
 const inputWordle = document.querySelector(".wordle-game");
 const statusMessage = document.querySelector(".wordle-header-status-message");
-
+const hashMapLettersWordOfDay = new Map();
 
 let endLineCheck = false;
 
@@ -8,18 +8,41 @@ let wordOfDay;
 let lettersWordOfDay = [];
 let qtdTries = 0;
 
-// VERIFICAR PALAVRA DO DIA
+//
+// WORD OF DAY VERIFICATION
+//
 
 async function wordOfDayCheck() {
     const response = await fetch("https://words.dev-apis.com/word-of-the-day");
     const data = await response.json();
     wordOfDay = data.word.toUpperCase();
     lettersWordOfDay = wordOfDay.split("");
-    console.log(wordOfDay);
-    console.log(lettersWordOfDay);
+    setLettersHashMap(lettersWordOfDay);
 }
 
 wordOfDayCheck();
+
+function setLettersHashMap(word) {
+    hashMapLettersWordOfDay.clear();
+    for (const letra of word) {
+        hashMapLettersWordOfDay.set(letra, true);
+    }
+}
+
+//
+// INPUT BLOCK
+//
+
+function activateInput(parentDiv){
+    const todosInputs = document.querySelectorAll('.wordle-game input');
+    todosInputs.forEach(input => input.disabled = true);
+    parentDiv.querySelectorAll('input').forEach(input => input.disabled = false);
+}
+
+
+//
+// ON INPUT CHAR
+//
 
 inputWordle.addEventListener("input", (event) => {
     const char = event.target.value;
@@ -54,10 +77,9 @@ inputWordle.addEventListener("keydown", (event) => {
 });
 
 
-
-// OPERAÇÃO AO APERTAR ENTER
-// - IR PARA PRÓXIMA LINHA
-// - VERIFICAR COM A API SE A PALAVRA EXISTE 
+// 
+// CONFIRM WORD
+//  
 
 
 inputWordle.addEventListener("keydown", (event) => {
@@ -74,18 +96,23 @@ inputWordle.addEventListener("keydown", (event) => {
 
         handleWord(firstChar, secondChar, thirdChar, fourthChar, fifthChar, parentDiv);
         if (tryIndex + 1 < tries.length) {
+            activateInput(tries[tryIndex+1]);
             const nextTryInputs = tries[tryIndex + 1].querySelectorAll("input");
             if (nextTryInputs.length > 0) {
                 nextTryInputs[0].focus();
             }
         }
-
+        
     }
-})
+});
+
+//
+// WORD HANLDE
+//
 
 async function handleWord(l1, l2, l3, l4, l5, parentDiv) {
 
-    // VERIFICAÇÃO COM A API
+    // API VERIFICATION
 
     const wordToVerify = l1 + l2 + l3 + l4 + l5;
     const lettersWordToVerify = wordToVerify.split("");
@@ -99,43 +126,51 @@ async function handleWord(l1, l2, l3, l4, l5, parentDiv) {
     });
     const data = await response.json();
     isLoading(false);
+    setLettersHashMap(lettersWordOfDay);
 
-
-    // COMPARAÇÃO COM A ENTRADA DO USUÁRIO
-
+    // USER ENTER VERIFICATION
 
     if (data.validWord === true) {
         endLineCheck = false;
-
-
+        const inputs = parentDiv.querySelectorAll("input");
+        inputs.forEach(input => input.disabled = true);
         if (wordToVerify === wordOfDay) {
-            const inputs = parentDiv.querySelectorAll("input");
             for (let i = 0; i < 5; i++) {
                 inputs[i].classList.add("input-letter-correct");
             }
             const todosInputs = document.querySelectorAll('.wordle-game input');
             todosInputs.forEach(input => input.disabled = true);
-            alert("Você venceu!");
+            alert("You win!");
+
+
         } else {
-            console.log("A");
             for (let i = 0; i < 5; i++) {
                 if (lettersWordToVerify[i] === lettersWordOfDay[i]) {
                     const inputs = parentDiv.querySelectorAll("input");
-                    console.log(`Letra na posição ${i+1} está correta!`);
                     inputs[i].classList.add("input-letter-correct");
-                } 
+                    hashMapLettersWordOfDay.delete(lettersWordToVerify[i]);
+                }
+            }
+            for (let i = 0; i < 5; i++) {
+                if (hashMapLettersWordOfDay.has(lettersWordToVerify[i])) {
+                    const inputs = parentDiv.querySelectorAll("input");
+                    inputs[i].classList.add("input-letter-exist");
+                }
             }
             qtdTries++;
             if (qtdTries === 6) {
-                alert("Você perdeu!");
+                alert("You loose!");
             }
         }
     } else {
-        alert("Palavra Inválida, tente novamente!")
-        // PALAVRA INVÁLIDA
+        alert("Invalid Word! Try Again!")
+        activateInput(parentDiv);
     }
 }
 
+//
+// LOADING STATUS
+//
 
 function isLoading(status) {
     const todosInputs = document.querySelectorAll('.wordle-game input');
@@ -144,7 +179,6 @@ function isLoading(status) {
         todosInputs.forEach(input => input.disabled = true);
     } else {
         statusMessage.innerText = 'Try It!';
-        todosInputs.forEach(input => input.disabled = false);
-        
     }
 }
+
