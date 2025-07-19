@@ -2,6 +2,7 @@ const inputWordle = document.querySelector(".wordle-game");
 const statusMessage = document.querySelector(".wordle-header-status-message");
 const hashMapLettersWordOfDay = new Map();
 
+
 let endLineCheck = false;
 
 let wordOfDay;
