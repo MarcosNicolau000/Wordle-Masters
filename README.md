@@ -1,6 +1,6 @@
 # 🎮 Wordle Masters
 
-
+A completed, simplified clone of the classic word-guessing game — built to sharpen front-end development skills.
 
 ---
 
@@ -8,25 +8,39 @@
 
 ### 🚀 About the Project
 
-**Wordle Masters** is a simplified recreation of the famous word-guessing game, developed with the main goal of deepening knowledge in front-end web development.  
-This project is inspired by and serves as a practical application of concepts learned in the **"Intro Web Development v3"** course by **Front-End Masters**.
+**Wordle Masters** is a complete and functional recreation of the popular Wordle game.  
+Originally developed as a learning exercise during the **"Intro Web Development v3"** course by **Front-End Masters**, it has now evolved into a fully working game that showcases front-end development skills.
 
-The objective of the game is to guess the secret word of the day within a limited number of attempts, receiving visual feedback with each guess.
+Players must guess the secret word of the day within a limited number of attempts. Each guess provides visual feedback indicating correct, misplaced, or incorrect letters.
+
+### 🔗 Live Demo
+
+👉 [Test Now!](https://marcosnicolau000.github.io/Wordle-Masters/)
+
+### ✅ Project Highlights
+
+- Functional game logic with real-time feedback  
+- Clean and responsive UI design  
+- AJAX daily word system  
 
 ### ✨ Technologies Used
 
-- **HTML5**: Structure and semantics of the game.  
-- **CSS3**: Styling and responsive design for a pleasant experience.  
-- **JavaScript**: Main game logic, word validation, attempt tracking, and visual feedback.
+- **HTML5**: Semantic structure  
+- **CSS3**: Styling and responsive layout  
+- **JavaScript**: Game logic, DOM manipulation, and interactivity  
 
-### 🎯 Learning Goal
+### 🎯 What I Learned
 
-This project is being developed as a way to put into practice and reinforce learning in **HTML**, **CSS**, and **JavaScript**.  
-It has been a great opportunity to understand how these web pillars work together to create a dynamic and interactive application, enhancing skills in **DOM manipulation**, **programming logic**, and **responsiveness**.
+This project was an excellent way to solidify knowledge in core front-end technologies:  
+- DOM manipulation  
+- Programming logic  
+- Responsive design  
+- Game state management  
 
 ### 🖼️ UI Preview
 
-<img width="898" height="928" alt="UI Preview" src="https://github.com/user-attachments/assets/f6707c66-7cdf-40eb-abd8-58bc9137412e" />
+<img width="714" height="792" alt="image" src="https://github.com/user-attachments/assets/429c84b8-1f20-49cd-a8a1-a9e7cae15b15" />
+
 
 ---
 
@@ -34,22 +48,35 @@ It has been a great opportunity to understand how these web pillars work togethe
 
 ### 🚀 Sobre o Projeto
 
-O **Wordle Masters** é uma recriação simplificada do famoso jogo de adivinhação de palavras, desenvolvida com o objetivo de aprofundar os conhecimentos em desenvolvimento web front-end.  
-Este projeto foi inspirado e é uma aplicação prática dos conceitos aprendidos no curso **"Intro Web Development v3"** da **Front-End Masters**.
+O **Wordle Masters** é uma recriação completa e funcional do famoso jogo Wordle.  
+Inicialmente desenvolvido como exercício durante o curso **"Intro Web Development v3"** da **Front-End Masters**, o projeto foi finalizado e transformado em um jogo jogável que demonstra habilidades em desenvolvimento front-end.
 
-O objetivo do jogo é adivinhar a palavra secreta do dia em um número limitado de tentativas, recebendo feedback visual a cada palpite.
+O jogador precisa adivinhar a palavra secreta do dia em um número limitado de tentativas, recebendo feedback visual com cada palpite.
+
+### 🔗 Link para Testar
+
+👉 [Teste agora!](https://marcosnicolau000.github.io/Wordle-Masters/)
+
+### ✅ Destaques do Projeto
+
+- Lógica de jogo funcional com feedback em tempo real  
+- Interface limpa e responsiva  
+- Sistema de palavra diária usando AJAX
 
 ### ✨ Tecnologias Utilizadas
 
-- **HTML5**: Estrutura e semântica do jogo.  
-- **CSS3**: Estilização e design responsivo para uma experiência agradável.  
-- **JavaScript**: Lógica principal do jogo, validação de palavras, controle de tentativas e feedback visual.
+- **HTML5**: Estrutura semântica  
+- **CSS3**: Estilização e layout responsivo  
+- **JavaScript**: Lógica do jogo, manipulação do DOM e interatividade  
 
-### 🎯 Objetivo de Aprendizagem
+### 🎯 O que Aprendi
 
-Este projeto está sendo desenvolvido como uma forma de praticar e consolidar o aprendizado em **HTML**, **CSS** e **JavaScript**.  
-Tem sido uma excelente oportunidade para entender como esses pilares da web interagem para criar uma aplicação dinâmica e interativa, aprimorando habilidades em **manipulação do DOM**, **lógica de programação** e **responsividade**.
+Este projeto foi essencial para consolidar conhecimentos nos pilares do front-end:  
+- Manipulação do DOM  
+- Lógica de programação  
+- Design responsivo  
+- Gerenciamento de estado do jogo  
 
 ### 🖼️ Prévia da Interface
 
-<img width="898" height="928" alt="UI Preview" src="https://github.com/user-attachments/assets/f6707c66-7cdf-40eb-abd8-58bc9137412e" />
+<img width="714" height="792" alt="image" src="https://github.com/user-attachments/assets/1f68d9f3-421e-4282-9155-9f5259bb04a4" />
